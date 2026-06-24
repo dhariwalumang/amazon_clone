@@ -1,0 +1,521 @@
+/* ==========================================================================
+   1. Core Structural Reset & Base Styles
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+body {
+    background-color: #eaeded; /* Exact slate background shade Amazon uses */
+    color: #0f1111;
+}
+
+/* ==========================================================================
+   2. Header & Navigation Structure
+   ========================================================================== */
+header {
+    display: flex;
+    flex-direction: column;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.navbar-top {
+    background-color: #131921;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+    color: white;
+    gap: 4px;
+}
+
+/* Amazon Nav Interactive Borders */
+.nav-border {
+    border: 1px solid transparent;
+    padding: 8px 6px;
+    border-radius: 2px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.nav-border:hover {
+    border: 1px solid white;
+}
+
+/* Logo Setup */
+.nav-logo {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+}
+
+.amazon-logo-img {
+    font-size: 22px;
+    font-weight: bold;
+    color: white;
+    position: relative;
+}
+
+.amazon-logo-img::before {
+    content: "amazon";
+}
+
+.logo-geo {
+    font-size: 0.75rem;
+    color: #ccc;
+    margin-left: 2px;
+    margin-bottom: 3px;
+}
+
+/* Delivery Location Typography */
+.nav-location {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 3px;
+}
+
+.location-icon {
+    font-size: 1.1rem;
+    margin-top: 8px;
+}
+
+.nav-line-1 {
+    font-size: 0.75rem;
+    color: #cccccc;
+}
+
+.nav-line-2 {
+    font-size: 0.85rem;
+    font-weight: bold;
+}
+
+.nav-line-2 span {
+    font-size: 0.65rem;
+    color: #bbb;
+}
+
+/* ==========================================================================
+   3. Amazon Precision Search Assembly
+   ========================================================================== */
+.nav-search-container {
+    display: flex;
+    flex-grow: 1;
+    height: 40px;
+    margin: 0 10px;
+    border-radius: 4px;
+    overflow: hidden;
+    background-color: white;
+}
+
+.nav-search-container:focus-within {
+    box-shadow: 0 0 0 2px #f3a847, 0 0 0 3px #febd69; /* Exact orange outer glow active focus accent */
+}
+
+.search-dropdown {
+    background-color: #f3f3f3;
+    border: none;
+    border-right: 1px solid #ddd;
+    padding: 0 10px;
+    font-size: 0.75rem;
+    color: #555;
+    cursor: pointer;
+    outline: none;
+}
+
+.search-dropdown:hover {
+    background-color: #dadada;
+    color: #000;
+}
+
+.search-input {
+    width: 100%;
+    border: none;
+    padding: 0 12px;
+    font-size: 0.95rem;
+    outline: none;
+}
+
+.search-icon-btn {
+    width: 45px;
+    background-color: #febd69;
+    border: none;
+    font-size: 1.1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.search-icon-btn:hover {
+    background-color: #f3a847;
+}
+
+/* Secondary Sub-Navigation Link Strip */
+.navbar-sub {
+    background-color: #232f3e;
+    height: 39px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 15px;
+    color: white;
+    font-size: 0.85rem;
+}
+
+.sub-left {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.menu-hamburger {
+    font-weight: bold;
+    flex-direction: row;
+    gap: 5px;
+    align-items: center;
+}
+
+/* Active Cart Navigation Badge */
+.nav-cart-container {
+    flex-direction: row;
+    align-items: center;
+    gap: 4px;
+}
+
+.cart-icon-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+#cart-count {
+    position: absolute;
+    top: -8px;
+    left: 10px;
+    color: #f08804;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.cart-graphic {
+    font-size: 1.6rem;
+}
+
+.cart-label {
+    margin-top: 10px;
+}
+
+
+
+.slider-btn {
+    position: absolute;
+    top: 30%;
+    transform: translateY(-50%);
+    background: transparent;
+    border: 2px solid transparent;
+    color: #000;
+    font-size: 2.5rem;
+    padding: 15px;
+    cursor: pointer;
+    z-index: 4;
+}
+
+.slider-btn:focus {
+    border-color: #007185;
+}
+
+.prev-btn { left: 10px; }
+.next-btn { right: 10px; }
+
+.hero-message {
+    background-color: #f5f6f6;
+    color: #0f1111;
+    font-size: 0.85rem;
+    padding: 12px;
+    text-align: center;
+    width: 96%;
+    margin-bottom: 120px; /* Shifts content upward directly over the banner graphic */
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+    z-index: 3;
+}
+
+.hero-message a {
+    color: #007185;
+    text-decoration: none;
+}
+
+.hero-message a:hover {
+    color: #c45500;
+    text-decoration: underline;
+}
+
+/* Wide Top Promotional Advertisement Strip */
+.top-ad-container {
+    max-width: 1500px;
+    margin: 30px auto 20px auto; /* Leverages the negative offset to pull it up elegantly over the slider base */
+    padding: 0 20px;
+    position: relative;
+    z-index: 5;
+}
+
+.ad-content {
+    background: linear-gradient(90deg, #232f3e 0%, #37475a 100%); /* Amazon's signature navy sub-nav palette colors */
+    color: white;
+    padding: 20px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.15);
+    position: relative;
+}
+
+.ad-badge {
+    position: absolute;
+    top: 4px;
+    left: 8px;
+    font-size: 0.6rem;
+    color: #a7b1bc;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.ad-text-details h2 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 4px;
+    color: #fff;
+}
+
+.ad-text-details p {
+    font-size: 0.85rem;
+    color: #e2e5e9;
+}
+
+.ad-shop-btn {
+    background-color: #ffd814;
+    border: 1px solid #fcd200;
+    border-radius: 4px;
+    padding: 10px 24px;
+    font-size: 0.85rem;
+    font-weight: bold;
+    color: #0f1111;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: background-color 0.1s ease;
+}
+
+.ad-shop-btn:hover {
+    background-color: #f7ca00;
+}
+/* Main Shop Showcase Layout Grid */
+.shop-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    padding: 0 20px 40px 20px;
+    max-width: 1500px;
+    margin: 0 auto 0 auto; /* Set to 0 to align cleanly underneath the new advertisement block */
+    position: relative;
+    z-index: 5;
+}
+/* Modular High-Fidelity Product Cards */
+.box {
+    background-color: white;
+    padding: 14px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    min-height: 440px;
+    border-radius: 0px; /* Real Amazon cards use flat, sharp square corners */
+}
+
+.box h3 {
+    font-size: 0.95rem; /* Refined Amazon typography scale */
+    font-weight: 500;
+    color: #0f1111;
+    margin-top: 10px;
+    margin-bottom: 8px;
+    line-height: 1.4;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* Truncates exceptionally long text fields cleanly to 2 rows */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.box-img {
+    height: 200px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    cursor: pointer;
+}
+
+/* Superscript Dynamic Price Layout */
+.price {
+    display: flex;
+    align-items: flex-start;
+    font-size: 1.7rem;
+    font-weight: 500;
+    color: #0f1111;
+    margin-bottom: 12px;
+}
+
+.price-symbol {
+    font-size: 0.75rem;
+    position: relative;
+    top: 4px;
+    margin-right: 1px;
+}
+
+.price-whole {
+    font-size: 1.7rem;
+    line-height: 1;
+}
+
+.price-fraction {
+    font-size: 0.75rem;
+    position: relative;
+    top: 2px;
+}
+
+/* Amazon Pill-Shaped Flat Yellow Action Button */
+.add-btn {
+    background-color: #ffd814;
+    border: 1px solid #fcd200;
+    border-radius: 100px; /* Precise rounded pill frame */
+    padding: 6px 0;
+    cursor: pointer;
+    font-size: 0.8rem;
+    color: #0f1111;
+    font-weight: 500;
+    box-shadow: 0 2px 5px rgba(213,217,217,.3);
+    outline: none;
+    transition: background-color 0.1s ease;
+}
+
+.add-btn:hover {
+    background-color: #f7ca00;
+    border-color: #f2c200;
+}
+
+/* ==========================================================================
+   6. Sliding Side Drawer Component Architecture
+   ========================================================================== */
+.cart-sidebar {
+    position: fixed;
+    top: 0;
+    right: -420px;
+    width: 400px;
+    height: 100%;
+    background-color: white;
+    box-shadow: -3px 0 15px rgba(0,0,0,0.25);
+    z-index: 100;
+    transition: right 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    display: flex;
+    flex-direction: column;
+}
+
+.cart-sidebar.open { 
+    right: 0; 
+}
+
+.cart-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.55);
+    z-index: 99;
+    display: none;
+}
+
+.cart-overlay.open { 
+    display: block; 
+}
+
+.sidebar-header {
+    padding: 20px;
+    border-bottom: 1px solid #e7e7e7;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    font-size: 2.2rem;
+    cursor: pointer;
+}
+
+.sidebar-items {
+    flex-grow: 1;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.empty-message {
+    text-align: center;
+    color: #565959;
+    margin-top: 30px;
+}
+
+.cart-item-row {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.cart-item-row img {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+}
+
+.cart-item-info { 
+    flex-grow: 1; 
+}
+
+.cart-item-info h4 { 
+    font-size: 0.9rem; 
+    margin-bottom: 3px; 
+}
+
+.sidebar-footer {
+    padding: 20px;
+    background-color: #fcfcfc;
+    border-top: 1px solid #e7e7e7;
+}
+
+.total-section {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.checkout-btn {
+    width: 100%;
+    background-color: #ffd814;
+    border: 1px solid #fcd200;
+    border-radius: 8px;
+    padding: 14px;
+    font-weight: bold;
+    cursor: pointer;
+}

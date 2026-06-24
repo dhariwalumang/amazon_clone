@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amazon.com. Spend less. Smile more.</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div class="navbar-top">
+            <div class="nav-border nav-logo">
+                <div class="amazon-logo-img"></div>
+                <span class="logo-geo">.com</span>
+            </div>
+
+            <div class="nav-border nav-location">
+                <span class="location-icon">📍</span>
+                <div class="location-text">
+                    <p class="nav-line-1">Deliver to</p>
+                    <p class="nav-line-2">India</p>
+                </div>
+            </div>
+
+            <div class="nav-search-container">
+                <select class="search-dropdown">
+                    <option>All Departments</option>
+                    <option>Electronics</option>
+                    <option>Computers</option>
+                    <option>Smart Home</option>
+                </select>
+                <input type="text" id="search-input" class="search-input" placeholder="Search Amazon">
+                <button class="search-icon-btn">🔍</button>
+            </div>
+
+            <div class="nav-border nav-language">
+                <span class="flag-icon">🇺🇸</span>
+                <p class="nav-line-2">EN <span>▼</span></p>
+            </div>
+
+            <div class="nav-border nav-account">
+                <p class="nav-line-1">Hello, sign in</p>
+                <p class="nav-line-2">Account & Lists <span>▼</span></p>
+            </div>
+
+            <div class="nav-border nav-orders">
+                <p class="nav-line-1">Returns</p>
+                <p class="nav-line-2">& Orders</p>
+            </div>
+
+            <div class="nav-border nav-cart-container" id="cart-nav-trigger">
+                <div class="cart-icon-wrapper">
+                    <span id="cart-count">0</span>
+                    <span class="cart-graphic">🛒</span>
+                </div>
+                <p class="nav-line-2 cart-label">Cart</p>
+            </div>
+        </div>
+
+        <div class="navbar-sub">
+            <div class="sub-left">
+                <div class="nav-border menu-hamburger">
+                    <span>☰</span> All
+                </div>
+                <p class="nav-border">Today's Deals</p>
+                <p class="nav-border">Customer Service</p>
+                <p class="nav-border">Registry</p>
+                <p class="nav-border">Gift Cards</p>
+                <p class="nav-border">Sell</p>
+            </div>
+            <div class="sub-right">
+                <p class="nav-border">Shop deals in Electronics</p>
+            </div>
+        </div>
+    </header>
+
+<section class="hero-section" id="hero-slider">
+        <button class="slider-btn prev-btn" onclick="changeSlide(-1)">&#10094;</button>
+        <button class="slider-btn next-btn" onclick="changeSlide(1)">&#10095;</button>
+    </section>
+
+    </section>
+
+    <div class="top-ad-container">
+        <div class="ad-content">
+            <span class="ad-badge">Sponsored</span>
+            <div class="ad-text-details">
+                <h2>Upgrade Your Home Studio Ecosystem</h2>
+                <p>Up to 40% off professional audio setups, microphones, and ultra-wide monitor displays. Free shipping on prime-eligible orders.</p>
+            </div>
+            <button class="ad-shop-btn">Shop Deals Now</button>
+        </div>
+    </div>
+
+
+    <main class="shop-section" id="product-grid">   
+        </main>
+
+    <div id="cart-sidebar" class="cart-sidebar">
+        <div class="sidebar-header">
+            <h2>Shopping Cart</h2>
+            <button id="close-cart" class="close-btn">&times;</button>
+        </div>
+        <div id="cart-items-container" class="sidebar-items">
+            <p class="empty-message">Your Amazon Cart is empty.</p>
+        </div>
+        <div class="sidebar-footer">
+            <div class="total-section">
+                <span>Subtotal:</span>
+                <span id="cart-total-price">$0.00</span>
+            </div>
+            <button class="checkout-btn">Proceed to checkout</button>
+        </div>
+    </div>
+    <div id="cart-overlay" class="cart-overlay"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
